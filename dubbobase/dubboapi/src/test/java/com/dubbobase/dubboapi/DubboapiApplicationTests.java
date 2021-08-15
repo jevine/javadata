@@ -1,10 +1,12 @@
-package com.dubbo.dubbocomsumer;
+package com.dubbobase.dubboapi;
+
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+
 @SpringBootTest
-class DubbocomsumerApplicationTests {
+class DubboapiApplicationTests {
 
     @Test
     void contextLoads() {

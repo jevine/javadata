@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!--注册dubbo服务到bean中-->
+    <!--<bean id="addressImpl" class="com.dubbo.dubboproduce.impl.AddressImpl"/>
+    <dubbo:service serialization="protobuf" interface="com.dubbo.dubboproduce.service.AddressService"
+                   ref="address
+                   Impl"/>-->
+    <!--    1.指定当前的服务的名字-->
+    <dubbo:application name="product-1"/>
+    <!--2.指定当前的注册位置-->
+    <!-- <dubbo:registry address="zookeeper://127.0.0.1:2181"/>-->
+    <!--    another way to set register-->
+    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>
+    <!--    3.指定通信规则-->
+    <dubbo:protocol name="dubbo" port="20881"/>
+    <!--暴露服务-->
+    <dubbo:service interface="com.dubbo.dubboproduce.service.AddressService" ref="addressImpl"/>
+    <!--服务的实现-->
+    <bean id="addressImpl" class="com.dubbo.dubboproduce.impl.AddressImpl"></bean>
+</beans>

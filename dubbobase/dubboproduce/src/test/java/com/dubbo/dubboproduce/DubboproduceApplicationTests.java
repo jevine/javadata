@@ -1,4 +1,4 @@
-package com.dubbo.demo;
+package com.dubbo.dubboproduce;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
